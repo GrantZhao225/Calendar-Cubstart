@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   const [noteText, setNoteText] = useState('') // sets the text inside the note text box
   const [notes, setNotes] = useState({}) // sets the notes for the current date
   const [expandedDay, setExpandedDay] = useState(null) // sets the expanded day to display the notes for the selected day
-  const [expandedDayRect, setExpandedDayRect] = useState(null) // sets the expanded day to display the notes for the selected day
+  
 
   const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   const months = [
@@ -32,7 +32,7 @@ function App() {
   }
   // these two functions are from https://stackoverflow.com/questions/13571700/get-first-and-last-date-of-current-month-with-javascript-or-jquery
 
-  // Navigation handlers
+  // Navigation 
   const handlePrevMonth = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1))
   }
@@ -79,13 +79,13 @@ function App() {
     });
   };
 
-  // Generate the calendar with the correct amount of days   
+  // Generate the calendar   
   const renderCalendar = () => {
     const daysInMonth = getDaysInMonth(currentDate)
     const firstDay = getFirstDayOfMonth(currentDate)
     const days = []
 
-    // Add weekday headers
+    // Add weekdays
     weekdays.forEach(day => {
       days.push(
         <div key={`header-${day}`} className="weekday-header">
@@ -161,7 +161,7 @@ function App() {
               className="expanded-day-close"
               onClick={() => setExpandedDay(null)}
             >
-              ×
+              x
             </button>
           </div>
           <div className="expanded-day-notes">
@@ -173,7 +173,7 @@ function App() {
                   onClick={(e) => handleDeleteNote(dateKey, index, e)}
                   title="Delete note"
                 >
-                  ×
+                  x
                 </button>
               </div>
             ))}
@@ -183,7 +183,7 @@ function App() {
     );
   };
 
-  // Generate month and the year options
+  // Generate month and the year
   const generateMonthYearOptions = () => {
     const options = []
     const currentYear = new Date().getFullYear()
