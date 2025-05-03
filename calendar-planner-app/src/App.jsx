@@ -144,7 +144,7 @@ function App() {
 
     return days
   }
-
+  
   const renderExpandedDay = () => {
     if (!expandedDay) return null;
 
@@ -199,6 +199,8 @@ function App() {
     }
     return options
   }
+  // had to look up so mmany functions and syntax LOL
+  //had to use online AI tools to check syntax and help with the html formatting
   // to close the start screen
   const handleStartCalendar = () => {
     setShowWelcome(false)

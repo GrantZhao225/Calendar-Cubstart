@@ -43,6 +43,7 @@
 
 
 /* my css styling */ 
+/* mostly copy pasted from websites and changed some values to make sense, thanks w3schools for most */
 .calendar-app {
   max-width: 1200px;
   margin: 0 auto;
@@ -174,7 +175,7 @@
     transform: translateX(100%);
   }
 }
-
+/* the classic w3schools css styling flexbox, containers, grid, etc */
 .calendar-header {
   display: flex;
   justify-content: space-between;
